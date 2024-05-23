@@ -106,8 +106,7 @@ bool Game::LoadMedia()
 
 bool Game::loadFont(const char* path)
 {
-	//TTF_CloseFont(font);// neu load nhieu font-> dong font cu
-	font = TTF_OpenFont(path, 30);//->load font moi
+	font = TTF_OpenFont(path, 30);
 	fontUpper = TTF_OpenFont(path, 120);
 	if (font == NULL||fontUpper==NULL)
 	{
@@ -349,7 +348,7 @@ void Game::Render_RetryMenu()
 	scoreText << "SCORE: ";
 	SDL_Color camsp = { 249, 141, 77, 255 };
 	BaseObject currentScore;
-	currentScore.setRect(SCREEN_WIDTH / 2-200, 150);
+	currentScore.setRect(SCREEN_WIDTH / 2-220, 150);
 	currentScore.CreateTexture(scoreText.str().c_str(), camsp, fontUpper, renderer);
 	currentScore.Render(renderer, NULL, camera);
 
@@ -516,29 +515,28 @@ void Game::RenderMonster()
 void Game::RenderMap()
 {
 	
-	if (mapList.at(0).GetStartX() - camerabg.x <= -LEVEL_WIDTH)
+	if (mapList.at(0).GetStartX() - camerabg.x <= -LEVEL_WIDTH)// nếu vị trí bắt đầu camera mà lớn hơn 1 màn hình thì nó sẽ xoá map đầu và thêm 1 map ngẫu nhiên vào cuối
 	{
 		int random = std::rand() % (TOTAL_MAP - 1) + 1;
-		std::cout << random << std::endl;
-		mapSTT++;
-		mapList.at(0).SetMapSTT(mapSTT);
+		mapSTT++; //số tt map tăng
+		mapList.at(0).SetMapSTT(mapSTT); // sửa map 0
 		mapList.at(0).LoadMap_text(map_path.at(random));
 		mapList.at(0).LoadTile(renderer);
 		GameMap level = mapList.at(0);
-		mapList.push_back(level);
-		mapList.erase(mapList.begin());
-		map map_data = mapList.at(2).Get_map();
-		mapDataList.push_back(map_data);
-		mapDataList.erase(mapDataList.begin());
-		for (int j = 0; j < mapDataList.at(2).monsterPos.size(); j++)
+		mapList.push_back(level); // thêm map mới tạo vào cuối
+		mapList.erase(mapList.begin()); // xoá map đầu
+		map map_data = mapList.at(2).Get_map(); 
+		mapDataList.push_back(map_data); // thêm mapdata mới vào cuối
+		mapDataList.erase(mapDataList.begin());// xoá mapdata đầu
+		for (int j = 0; j < mapDataList.at(2).monsterPos.size(); j++) // load quái map mới
 		{
-			Monster* monster = new Monster((mapDataList.at(2).monsterPos.at(j) / TILE_SIZE) * TILE_SIZE - 80 + mapDataList.at(2).map_start_, (mapDataList.at(2).monsterPos.at(j) % TILE_SIZE) * TILE_SIZE - 128);
+			Monster* monster = new Monster((mapDataList.at(2).monsterPos.at(j) / TILE_SIZE) * TILE_SIZE - 80 + mapDataList.at(2).map_start_, (mapDataList.at(2).monsterPos.at(j) % TILE_SIZE) * TILE_SIZE - 128); // 2 là map cuối
 			monster->Load_Img("Monster/monster.png", renderer);
 			monsterList.push_back(monster);
 		}
 	}
 	
-	for (int i = 0; i < TOTAL_LEVEL; i++)
+	for (int i = 0; i < TOTAL_LEVEL; i++) // render
 	{
 		mapList.at(i).DrawTile(renderer, camerabg);
 	}

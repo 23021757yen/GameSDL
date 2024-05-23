@@ -52,6 +52,8 @@ public:
 		death_ = false;
 		MARK_CHA = 4;
 		flip_type_ = SDL_FLIP_NONE;
+		x_val = 0;
+		y_val = 0;
 	}
 
 private:

@@ -313,14 +313,10 @@ void Character::GetHit(std::vector<Monster*>& monsterList, Mix_Chunk* p_sfx[], M
 			}
 		}
 	}
-	if ((camera.x + 380 >= getCollision().x) && jump_)
+	if ((camera.x + 380 >= getCollision().x))
 	{
 		death_ = true;
-	}
-	if ((camera.x + 380 >= getCollision().x) && on_ground_)
-	{
-		death_ = true;
-	}
+	} // you ngựa
 }
 
 void Character::Show_Frames(SDL_Renderer* des, SDL_Rect& camera)
