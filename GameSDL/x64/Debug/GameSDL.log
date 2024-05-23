@@ -1,0 +1,16 @@
+﻿  Game.cpp
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Monster.h(24,63): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Monster.h(24,79): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(215,194): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(215,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(535,194): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(535,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(579,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(579,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(624,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngocyen\source\repos\GameSDL\GameSDL\Game.cpp(650,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  GameSDL.vcxproj -> C:\Users\ngocyen\source\repos\GameSDL\x64\Debug\GameSDL.exe
