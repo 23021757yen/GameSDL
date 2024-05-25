@@ -37,9 +37,11 @@ Install CodeBlocks, Visual Studio 2019, Visual Studio Code, XCode,... then downl
 
 #Screen Shot
 //…//
+file:///C:/Users/ngocyen/Downloads/game_ltnc.pdf
 
 #Video Demo
 //…//
+https://www.youtube.com/watch?v=N05hf_KMG5w
 
 #Credit
 assets/sounds/img are from internet (cre: itch.io)
